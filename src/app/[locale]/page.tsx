@@ -25,14 +25,6 @@ export default function Home({}) {
         quality={100}
         priority={true}
       />
-
-      <Image
-        className={styles.bh}
-        src={bh}
-        alt='Belo Horizonte'
-        quality={100}
-        priority={true}
-      />
     </div>
   )
 }
