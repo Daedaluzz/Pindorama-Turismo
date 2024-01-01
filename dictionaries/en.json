@@ -1,0 +1,22 @@
+{
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, pt {Português} en {English} other {Unknown}}"
+  },
+  "Nav": {
+    "destinations": "DESTINATIONS",
+    "promotions": "PROMOTIONS",
+    "packages": "PACKAGES",
+    "contact": "CONTACT",
+    "about": "ABOUT",
+    "management": "MANAGEMENT"
+  },
+"Home":{
+    "title": "LETSGOO"
+  },
+  
+    "Index": {
+      "title": "Hello world!"
+    }
+  
+}
