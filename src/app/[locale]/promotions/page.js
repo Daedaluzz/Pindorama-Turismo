@@ -2,7 +2,7 @@
 export default function Promotions() {
   return (
     <main>
-      <div></div>
+      <div>DALE DALEOOO</div>
     </main>
   )
 }
