@@ -1,0 +1,14 @@
+.switcher{
+        flex-shrink: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+        padding: clamp(0.5rem, 1.5vw, 1rem);
+        aspect-ratio: 1/1;
+        margin-left: auto;
+        color: white;
+        background-color: rgba(var(--jenipapo-black-rgb), 0.4);
+        backdrop-filter: blur(5px);
+        border-radius: .5rem;
+        }

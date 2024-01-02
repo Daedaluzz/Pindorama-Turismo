@@ -1,10 +1,9 @@
 import React from 'react'
 
-export default function MainElement({ children, locale }) {
+export default function MainElement({ children}) {
     return (
         <main>
             {children}
-            <p>LOCAL = {locale}</p>
         </main>
     )
 }

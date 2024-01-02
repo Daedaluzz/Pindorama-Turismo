@@ -4,12 +4,15 @@
     "locale": "{locale, select, pt {PT} en {EN} other {Unknown}}"
   },
   "Nav": {
+    "#top": "#top",
     "destinations": "DESTINOS",
     "promotions": "PROMOÇÕES",
     "packages": "PACOTES",
     "contact": "CONTATO",
     "about": "SOBRE",
     "management": "GESTÃO"
+
+    
   },
 "Home":{
     "title": "DALEPORRA"
