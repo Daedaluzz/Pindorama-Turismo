@@ -5,7 +5,6 @@
     justify-content: center;
     width: clamp(18rem, 15vw, 25rem);
     height: auto;
-    padding: 1rem;
     justify-self: center;
     align-self: center;
 }

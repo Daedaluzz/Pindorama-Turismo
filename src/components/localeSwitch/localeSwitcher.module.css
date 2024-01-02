@@ -1,14 +1,95 @@
-.switcher{
-        flex-shrink: 1;
-        display: flex;
+.switcher1 {
+        position: relative;
+        display: block;
         align-items: center;
-        justify-content: center;
-        font-size: clamp(1.2rem, 1.5vw, 1.6rem);
-        padding: clamp(0.5rem, 1.5vw, 1rem);
-        aspect-ratio: 1/1;
-        margin-left: auto;
+        overflow: hidden;
+        width: 5rem;
+
+}
+
+.switcher1::after,
+.switcher1::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(var(--brasil-blue-rgb), 0.6);
+
+}
+
+.switcher2 {
+        position: relative;
+        display: block;
+        align-items: center;
+        overflow: hidden;
+        width: 5rem;
+}
+
+.switcher2::after,
+.switcher2::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(var(--brasil-white-rgb),0.6);
+
+}
+
+.switcher2::after,
+.switcher1::after {
+        top: 0;
+        right: 0;
+
+}
+
+.switcher1::before,
+.switcher2::before {
+        left: 0;
+}
+
+.switch1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        width: 10rem;
         color: white;
-        background-color: rgba(var(--jenipapo-black-rgb), 0.4);
-        backdrop-filter: blur(5px);
-        border-radius: .5rem;
-        }
+        font-size: 1.8rem;
+        font-weight: 600;
+        padding: 1rem 1.5rem;
+        transform: translateX(0%);
+        transition: 350ms ease-out;
+}
+
+.switch2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        width: 10rem;
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 600;
+        padding: 1rem 1.5rem;
+        transform: translateX(-50%);
+        transition: 350ms ease-out;
+}
+
+
+.switch2:hover {
+        padding: 1rem 1.6rem;
+        transform: translateX(0%);
+}
+
+.switch1:hover {
+        transform: translateX(-50%);
+}
+
+.scrolledSwitch {
+        color: rgba(var(--brasil-blue-rgb), 0.6);
+}
+
+.disabledLink {
+        color: transparent;
+        background-color: transparent;
+}
