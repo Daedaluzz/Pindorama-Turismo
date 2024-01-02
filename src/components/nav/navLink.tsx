@@ -24,11 +24,11 @@ export default function NavLink<Pathname extends AppPathnames>({
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        console.log(href)
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [lastScrollPosition]);
+
     return (
         <Link
             aria-current={isActive ? 'page' : undefined}

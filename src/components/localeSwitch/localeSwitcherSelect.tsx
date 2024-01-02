@@ -1,41 +1,40 @@
 'use client';
-
-import {ChangeEvent, ReactNode, useTransition} from 'react';
-import {useRouter, usePathname} from '@/navigation';
+import { useTransition } from 'react';
+import { useRouter, usePathname, Link } from '@/navigation';
+import styles from './localeSwitcher.module.css'
 
 type Props = {
-  children: ReactNode;
-  defaultValue: string;
-  label: string;
+  langs: any;
 };
-
 export default function LocaleSwitcherSelect({
-  children,
-  defaultValue,
-  label
+  langs,
+
 }: Props) {
-  const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
   const pathname = usePathname();
 
-  function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    const nextLocale = event.target.value;
+  const handleLinkClick = (nextLocale: string) => {
     startTransition(() => {
-      router.replace(pathname, {locale: nextLocale});
+      router.replace(pathname, { locale: nextLocale });
     });
-  }
+  };
 
   return (
-    <label>
-      <p>{label}</p>
-      <select
-        defaultValue={defaultValue}
-        disabled={isPending}
-        onChange={onSelectChange}
-      >
-        {children}
-      </select>
-      <span>⌄</span>
-    </label>
-  );
+    <div>
+      {langs.map((cur: any) => (
+        <Link
+          key={cur}
+          locale={cur}
+          href={pathname}
+          scroll={false}
+          onClick={(event) => {
+            handleLinkClick(cur);
+          }}
+          >
+          {cur}
+        </Link>
+      ))}
+    </div>
+  )
 }

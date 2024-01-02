@@ -1,7 +1,7 @@
 import styles from './nav.module.css';
 import MenuNav from './menuNav';
 import Logo from '../logo/logo';
-import LocaleSwitcher from '../localeSwitch/localeSwitcher';
+
 import { useTranslations } from 'next-intl'
 
 export default function Nav() {
@@ -17,7 +17,6 @@ export default function Nav() {
         contact={t('contact')}
         about={t('about')}
         management={t('management')}>
-        <LocaleSwitcher />
       </MenuNav>
     </nav>
   );

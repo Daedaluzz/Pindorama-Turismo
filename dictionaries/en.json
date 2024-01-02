@@ -4,7 +4,6 @@
     "locale": "{locale, select, pt {PT} en {EN} other {Unknown}}"
   },
   "Nav": {
-    "#top": "#top",
     "destinations": "DESTINATIONS",
     "promotions": "PROMOTIONS",
     "packages": "PACKAGES",

@@ -36,10 +36,7 @@ export const pathnames = {
     en: '/management',
     pt: encodeURI('/gestão')
   },
-  '#top': {
-    en: '#top',
-    pt: '#top'
-  },
+
 
 } satisfies Pathnames<typeof locales>;
 

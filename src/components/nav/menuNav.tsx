@@ -1,12 +1,12 @@
 'use client'
 import React, {useState, useEffect, ReactNode } from 'react';
+import LocaleSwitcher from '../localeSwitch/localeSwitcher';
 import NavLink from "./navLink";
 import styles from './nav.module.css';
 import Logo from '../logo/logo';
 
 
 type Props = {
-    children: ReactNode,
     destinations: string,
     promotions: string;
     packages: string;
@@ -16,7 +16,6 @@ type Props = {
 }
 
 export default function MenuNav({
-    children,
     destinations,
     promotions,
     packages,
@@ -54,7 +53,7 @@ export default function MenuNav({
           style={{
             transform: `translateY(${scrolling ? '-100%' : '0'})`,
           }}>
-            {children}
+    
             <li><NavLink className={styles.logoPai} href="/"><Logo /></NavLink></li>
             <li><NavLink href="/destinations">{destinations}</NavLink></li>
             <li><NavLink href="/promotions">{promotions}</NavLink></li>
@@ -62,7 +61,7 @@ export default function MenuNav({
             <li><NavLink href="/contact">{contact}</NavLink></li>
             <li><NavLink href="/about">{about}</NavLink></li>
             <li><NavLink href='/management'>{management}</NavLink></li>
-            
+            <li><LocaleSwitcher /></li>
         </menu>
     )
 }
