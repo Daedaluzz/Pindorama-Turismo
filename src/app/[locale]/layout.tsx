@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import './globals.css'
 import MainElement from './components/mainElement'
 import Nav from './components/nav/nav'
+import LocaleSwitcher from './components/localeSwitch/localeSwitcher'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -31,8 +32,10 @@ export default function LocaleLayout({ children, params: { locale } }: {
           about={t('about')}
           management={t('management')}
         />
-        <MainElement>
+        <MainElement locale={locale}> 
           {children}
+          
+          <LocaleSwitcher/>
         </MainElement>
       </body>
     </html>
