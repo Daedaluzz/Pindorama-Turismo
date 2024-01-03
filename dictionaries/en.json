@@ -1,7 +1,7 @@
 {
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, pt {Português} en {English} other {Unknown}}"
+    "locale": "{locale, select, pt {PT} en {EN} other {Unknown}}"
   },
   "Nav": {
     "destinations": "DESTINATIONS",
@@ -10,6 +10,7 @@
     "contact": "CONTACT",
     "about": "ABOUT",
     "management": "MANAGEMENT"
+
   },
 "Home":{
     "title": "LETSGOO"

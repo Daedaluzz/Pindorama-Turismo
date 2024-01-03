@@ -38,7 +38,7 @@
     "src/middleware.ts",
     "src/i18n",
     "src/get-dictionarys"
-, "src/app/[locale]/components/nav/nav2"  ],
+, "src/app/[locale]/components/nav/nav.tsx", "src/app/[locale]/components/localeSwitch/localeSwitcher.tsx", "src/app/[locale]/components/localeSwitch/localeSwitchSelect.tsx", "src/components/nav/nav2"  ],
   "exclude": [
     "node_modules"
   ]

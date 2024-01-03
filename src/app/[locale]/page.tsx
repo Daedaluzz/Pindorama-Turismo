@@ -3,13 +3,13 @@ import Image from 'next/image';
 import styles from './page.module.css'
 import { useTranslations } from 'next-intl';
 
-export default function Home({}) {
+export default function Home() {
   const t = useTranslations('Home');
 
 
   return (
     <div className={styles.dale}>
-
+{/* 
       <Image
         className={styles.bh}
         src={bh}
@@ -24,7 +24,7 @@ export default function Home({}) {
         alt='Belo Horizonte'
         quality={100}
         priority={true}
-      />
+      /> */}
     </div>
   )
 }

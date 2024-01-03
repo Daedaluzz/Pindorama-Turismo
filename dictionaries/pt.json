@@ -1,4 +1,8 @@
 {
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, pt {PT} en {EN} other {Unknown}}"
+  },
   "Nav": {
     "destinations": "DESTINOS",
     "promotions": "PROMOÇÕES",
@@ -6,6 +10,8 @@
     "contact": "CONTATO",
     "about": "SOBRE",
     "management": "GESTÃO"
+
+    
   },
 "Home":{
     "title": "DALEPORRA"

@@ -1,0 +1,84 @@
+/*logo*/
+.logoPai {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(15rem, 15vw, 25rem);
+    height: 80px;
+    justify-self: center;
+    align-self: center;
+}
+
+.logolarge,
+.logoSmall {
+    display: block;
+    object-fit: contain;
+    transition: 350ms ease-out;
+    animation: fade-in 1s ease-out;
+}
+
+.logolarge:hover,
+.logoSmall:hover {
+    filter: brightness(120%);
+    transition: 350ms ease-out;
+}
+
+.logoSmall {
+    display: none;
+}
+
+.logoWhite {
+    filter: brightness(0) invert(1);
+
+}
+
+.logoWhite:hover {
+    filter: none;
+    transition: 350ms ease-out;
+}
+
+@media (max-width: 970px) {
+    .logoPai {
+        width: clamp(5rem, 8vw, 15rem);
+    }
+
+    .logolarge {
+        display: none;
+    }
+
+    .logoSmall {
+        display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    .logoPai {
+        width: clamp(15rem, 40vw, 25rem);
+        margin-bottom: 4rem;
+    }
+
+    .logolarge {
+        display: flex;
+    }
+
+    .logoSmall {
+        display: none;
+    }
+
+    .logoWhite {
+        filter: none;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MainElement({ children }) {
+export default function MainElement({ children}) {
     return (
         <main>
             {children}

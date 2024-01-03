@@ -1,12 +1,17 @@
-import {createLocalizedPathnamesNavigation, Pathnames} from 'next-intl/navigation';
- 
+import { createLocalizedPathnamesNavigation, Pathnames } from 'next-intl/navigation';
+
 export const locales = ['en', 'pt'] as const;
-export const localePrefix = 'always'; // Default
- 
+export const localePrefix = undefined;
+
+
 // The `pathnames` object holds pairs of internal
 // and external paths, separated by locale.
 export const pathnames = {
 
+  '/': {
+    en: '/',
+    pt: '/'
+  },
   '/destinations': {
     en: '/destinations',
     pt: '/destinos'
@@ -34,6 +39,8 @@ export const pathnames = {
 
 
 } satisfies Pathnames<typeof locales>;
- 
-export const {Link, redirect, usePathname, useRouter, getPathname} =
-  createLocalizedPathnamesNavigation({locales, localePrefix, pathnames});
+
+export type AppPathnames = keyof typeof pathnames;
+
+export const { Link, redirect, usePathname, useRouter, getPathname } =
+  createLocalizedPathnamesNavigation({ locales, localePrefix, pathnames });

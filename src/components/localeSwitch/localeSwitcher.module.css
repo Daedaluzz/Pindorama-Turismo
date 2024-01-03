@@ -1,0 +1,134 @@
+.switcher,
+.switcher2 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        width: 4rem;
+}
+
+.switcher::after,
+.switcher2::after {
+        top: 0;
+        right: 0;
+
+}
+
+.switcher::before,
+.switcher2::before {
+        top:0;
+        left: 0;
+}
+.switcher::after,
+.switcher::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(var(--brasil-white-rgb), 0.6);
+}
+.switcher2::after,
+.switcher2::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: rgb(var(--brasil-blue-rgb));
+        z-index: 2;
+
+}
+
+.option1 {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 4rem;
+        aspect-ratio: 1/1;
+        font-size: clamp(1.4rem, 2vw, 1.6rem);
+        font-weight: 600;
+        transition: 350ms ease-out;
+}
+
+.option2 {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 4rem;
+        aspect-ratio: 1/1;
+        font-size: clamp(1.4rem, 2vw, 1.6rem);
+        font-weight: 600;
+        transition: 350ms ease-out;
+}
+
+
+.switcher:hover > .option1,
+.switcher:focus > .option1,
+.switcher :active > .option1{
+        transform: translateX(100%);
+}
+.switcher:hover > .option2,
+.switcher:focus > .option2,
+.switcher :active > .option2{
+        transform: translateX(-100%);
+}
+.switcher2:hover > .option1,
+.switcher2:focus > .option1,
+.switcher2 :active > .option1{
+        transform: translateX(100%);
+}
+.switcher2:hover > .option2,
+.switcher2:focus > .option2,
+.switcher2 :active > .option2{
+        transform: translateX(-100%);
+}
+
+.scrolledSwitch {
+        color: rgb(var(--brasil-blue-rgb));
+}
+
+.disabledLink {
+        color: transparent;
+        background-color: transparent;
+}
+@media (max-width: 800px) {
+ .option1,
+ .option2{
+        color: rgb(var(--brasil-blue-rgb));
+ }
+ .option1{
+        border: dotted 1px rgba(var(--brasil-blue-rgb), 0.4);
+ }
+ .switcher,
+ .switcher2 {
+         position: relative;
+         display: flex;
+         align-items: center;
+         overflow: auto;
+         width: 100%;
+ }
+ .switcher:hover > .option1,
+ .switcher:focus > .option1,
+ .switcher :active > .option1{
+         transform: translateX(0);
+ }
+ .switcher:hover > .option2,
+ .switcher:focus > .option2,
+ .switcher :active > .option2{
+         transform: translateX(0);
+ }
+ .switcher2:hover > .option1,
+ .switcher2:focus > .option1,
+ .switcher2 :active > .option1{
+         transform: translateX(0);
+ }
+ .switcher2:hover > .option2,
+ .switcher2:focus > .option2,
+ .switcher2 :active > .option2{
+         transform: translateX(0);
+ }  
+
+}
