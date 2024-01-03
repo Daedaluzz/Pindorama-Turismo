@@ -4,6 +4,7 @@ import LocaleSwitcher from '../localeSwitch/localeSwitcher';
 import NavLink from "./navLink";
 import styles from './nav.module.css';
 import LogoNav from '../logoNav/logoNav';
+import { AnimatePresence, motion } from 'framer-motion';
 
 
 type Props = {
@@ -47,14 +48,19 @@ export default function MenuNav({
       };
     }, [lastScrollPosition]);
     return (
-        <menu className={`${styles.menu} ${
+      <AnimatePresence>
+        <motion.menu 
+         initial={{ opacity: 0 }}
+         animate={{ opacity: 1 }}
+         exit={{ opacity: 0 }}
+        className={`${styles.menu} ${
             scrolling2 ? styles.scrolled : ''
           }`}
           style={{
             transform: `translateY(${scrolling ? '-100%' : '0'})`,
           }}>
     
-            <li><NavLink className={styles.logoPai} href="/"><LogoNav lastScrollPosition={lastScrollPosition} threshold={threshold} /></NavLink></li>
+            <li><NavLink className={styles.logoPai} href="/"><LogoNav lastScrollPosition={lastScrollPosition}/></NavLink></li>
             <li><NavLink href="/destinations">{destinations}</NavLink></li>
             <li><NavLink href="/promotions">{promotions}</NavLink></li>
             <li><NavLink href="/packages">{packages}</NavLink></li>
@@ -62,6 +68,7 @@ export default function MenuNav({
             <li><NavLink href="/about">{about}</NavLink></li>
             <li><NavLink href='/management'>{management}</NavLink></li>
             <li><LocaleSwitcher /></li>
-        </menu>
+        </motion.menu>
+        </AnimatePresence>
     )
 }

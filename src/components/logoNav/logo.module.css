@@ -5,17 +5,53 @@
     align-items: center;
     justify-content: center;
     width: clamp(15rem, 15vw, 25rem);
-    height:80px;
+    height: 80px;
     justify-self: center;
     align-self: center;
 }
 
-.logo {
+.logolarge,
+.logoSmall {
+    display: block;
     object-fit: contain;
     transition: 350ms ease-out;
+    animation: fade-in 1s ease-out;
 }
 
-.logo:hover {
+.logolarge:hover,
+.logoSmall:hover {
     filter: hue-rotate(380deg);
     transition: filter 10s ease-in-out;
+}
+
+.logoSmall {
+    display: none;
+
+
+
+}
+@media (max-width: 970px) {
+    .logoPai {
+        width: clamp(5rem, 8vw, 15rem);
+    }
+
+    .logolarge {
+        display: none;
+    }
+
+    .logoSmall {
+        display: block;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
 }

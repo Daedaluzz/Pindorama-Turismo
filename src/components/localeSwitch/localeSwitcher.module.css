@@ -1,4 +1,3 @@
-
 .switcher,
 .switcher2 {
         position: relative;
@@ -35,10 +34,9 @@
         width: 1px;
         height: 100%;
         background-color: rgb(var(--brasil-blue-rgb));
+        z-index: 2;
 
 }
-
-
 
 .option1 {
         display: flex;
@@ -95,7 +93,7 @@
 }
 
 .scrolledSwitch {
-        color: rgba(var(--brasil-blue-rgb), 0.6);
+        color: rgb(var(--brasil-blue-rgb));
 }
 
 .disabledLink {

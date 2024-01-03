@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div className={styles.dale}>
-
+{/* 
       <Image
         className={styles.bh}
         src={bh}
@@ -24,7 +24,7 @@ export default function Home() {
         alt='Belo Horizonte'
         quality={100}
         priority={true}
-      />
+      /> */}
     </div>
   )
 }

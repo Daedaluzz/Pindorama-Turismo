@@ -65,8 +65,3 @@ export default function LocaleSwitcherSelect({
 
   );
 }
-
-// className={`${styles.switch} ${lang === 'en'
-//                   ? styles.switch1 : styles.switch2}
-//            ${scrolling
-//                     ? styles.scrolledSwitch : ''}`}
