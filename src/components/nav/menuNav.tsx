@@ -3,7 +3,7 @@ import React, {useState, useEffect, ReactNode } from 'react';
 import LocaleSwitcher from '../localeSwitch/localeSwitcher';
 import NavLink from "./navLink";
 import styles from './nav.module.css';
-import Logo from '../logo/logo';
+import LogoNav from '../logoNav/logoNav';
 
 
 type Props = {
@@ -54,7 +54,7 @@ export default function MenuNav({
             transform: `translateY(${scrolling ? '-100%' : '0'})`,
           }}>
     
-            <li><NavLink className={styles.logoPai} href="/"><Logo /></NavLink></li>
+            <li><NavLink className={styles.logoPai} href="/"><LogoNav lastScrollPosition={lastScrollPosition} threshold={threshold} /></NavLink></li>
             <li><NavLink href="/destinations">{destinations}</NavLink></li>
             <li><NavLink href="/promotions">{promotions}</NavLink></li>
             <li><NavLink href="/packages">{packages}</NavLink></li>

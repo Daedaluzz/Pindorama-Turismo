@@ -1,6 +1,6 @@
 import styles from './nav.module.css';
 import MenuNav from './menuNav';
-import Logo from '../logo/logo';
+import Logo from '../logoNav/logoNav';
 
 import { useTranslations } from 'next-intl'
 

@@ -3,8 +3,17 @@ import styles from './logo.module.css'
 import Image from 'next/image';
 import logoGrad from '@/public/images/logo-grad.svg';
 
-export default function Logo(){
-    
+
+type Props = {
+  lastScrollPosition: number;
+   threshold: number;
+}
+
+export default function LogoNav({
+  lastScrollPosition,
+  threshold,
+}:Props) {
+
     return(
       <div className={styles.logoPai}>
                   <Image id="logo"
@@ -14,6 +23,7 @@ export default function Logo(){
               alt="Pindorama"
               quality={100}
               priority={true}
+              style={{ filter: lastScrollPosition < threshold ? 'brightness(0) invert(1)' : '' }}
             />
             </div>
 )
