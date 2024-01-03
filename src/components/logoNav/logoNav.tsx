@@ -2,6 +2,7 @@
 import styles from './logo.module.css'
 import Image from 'next/image';
 import logoGrad from '@/public/images/logo-grad.svg';
+import logo from '@/public/images/logo-blue-yellow.svg';
 
 
 type Props = {
@@ -20,10 +21,11 @@ export default function LogoNav({
               data-visible="false"
               className={styles.logo}
               src={logoGrad}
+              fill
               alt="Pindorama"
               quality={100}
               priority={true}
-              style={{ filter: lastScrollPosition < threshold ? 'brightness(0) invert(1)' : '' }}
+              style={{ filter: lastScrollPosition ==0 ? 'brightness(0) invert(1)' : '' }}
             />
             </div>
 )

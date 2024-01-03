@@ -41,28 +41,32 @@ export default function LocaleSwitcherSelect({
   }, [lastScrollPosition]);
 
   return (
-    <div className={`${scrolling? styles.switcher1:styles.switcher2}`}>
-      <div  aria-current={scrolling
-        ? true : false}
-        className={`${styles.switch} ${lang === 'en'
-          ? styles.switch1 : styles.switch2}
-           ${scrolling
-            ? styles.scrolledSwitch : ''}`} >
-        {langs.map((cur: any) => (
-          <>
-            {isPending ? (
-              <span className={styles.disabledLink}>{cur}</span>
-            ) : (
-              <Link locale={cur} href={pathname} scroll={false} onClick={() => handleLinkClick(cur)}>
+    <div className={`${scrolling?styles.switcher2:styles.switcher}`}>
 
-                {cur}
 
-              </Link>
-            )}
-          </>
-        ))}
-      </div>
+      {isPending ? (
+        <span className={styles.disabledLink}>'en'</span>
+      ) : (
+        <Link className={`${styles.option1} ${scrolling?styles.scrolledSwitch:''}`} locale={lang == 'en'?'en':'pt'} href={pathname} scroll={false} onClick={() => handleLinkClick('')}>
+          <div aria-current={scrolling ? true : false}>{lang == 'en'?'en':'pt'} </div>
+        </Link>
+      )}
+      {isPending ? (
+        <span className={styles.disabledLink}>'pt'</span>
+      ) : (
+        <Link className={`${styles.option2} ${scrolling?styles.scrolledSwitch:''}`} locale={lang == 'en'?'pt':'en'}  href={pathname} scroll={false} onClick={() => handleLinkClick('')}>
+          <div aria-current={scrolling ? true : false}>{lang == 'en'?'pt':'en'}</div>
+        </Link>
+      )}
+
+
     </div>
+
 
   );
 }
+
+// className={`${styles.switch} ${lang === 'en'
+//                   ? styles.switch1 : styles.switch2}
+//            ${scrolling
+//                     ? styles.scrolledSwitch : ''}`}

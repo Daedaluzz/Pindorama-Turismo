@@ -1,17 +1,16 @@
 /*logo*/
 .logoPai {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(18rem, 15vw, 25rem);
-    height: auto;
+    width: clamp(15rem, 15vw, 25rem);
+    height:80px;
     justify-self: center;
     align-self: center;
 }
 
 .logo {
-    height: 100%;
-    width: 100%;
     object-fit: contain;
     transition: 350ms ease-out;
 }
@@ -19,5 +18,4 @@
 .logo:hover {
     filter: hue-rotate(380deg);
     transition: filter 10s ease-in-out;
-
 }

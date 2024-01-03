@@ -1,88 +1,97 @@
-.switcher1 {
-        position: relative;
-        display: block;
-        align-items: center;
-        overflow: hidden;
-        width: 5rem;
 
-}
-
-.switcher1::after,
-.switcher1::before {
-        content: '';
-        position: absolute;
-        width: 1px;
-        height: 100%;
-        background-color: rgba(var(--brasil-blue-rgb), 0.6);
-
-}
-
+.switcher,
 .switcher2 {
         position: relative;
-        display: block;
+        display: flex;
         align-items: center;
         overflow: hidden;
-        width: 5rem;
+        width: 4rem;
 }
 
-.switcher2::after,
-.switcher2::before {
-        content: '';
-        position: absolute;
-        width: 1px;
-        height: 100%;
-        background-color: rgba(var(--brasil-white-rgb),0.6);
-
-}
-
-.switcher2::after,
-.switcher1::after {
+.switcher::after,
+.switcher2::after {
         top: 0;
         right: 0;
 
 }
 
-.switcher1::before,
+.switcher::before,
 .switcher2::before {
+        top:0;
         left: 0;
 }
+.switcher::after,
+.switcher::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(var(--brasil-white-rgb), 0.6);
+}
+.switcher2::after,
+.switcher2::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: rgb(var(--brasil-blue-rgb));
 
-.switch1 {
+}
+
+
+
+.option1 {
         display: flex;
-        justify-content: space-between;
+        flex-shrink: 0;
         align-items: center;
-        gap: 0.5rem;
-        width: 10rem;
+        justify-content: center;
         color: white;
-        font-size: 1.8rem;
+        width: 4rem;
+        aspect-ratio: 1/1;
+        font-size: clamp(1.4rem, 2vw, 1.6rem);
         font-weight: 600;
-        padding: 1rem 1.5rem;
-        transform: translateX(0%);
         transition: 350ms ease-out;
 }
 
-.switch2 {
+.option2 {
+        flex-shrink: 0;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        gap: 0.5rem;
-        width: 10rem;
+        justify-content: center;
         color: white;
-        font-size: 1.8rem;
+        width: 4rem;
+        aspect-ratio: 1/1;
+        font-size: clamp(1.4rem, 2vw, 1.6rem);
         font-weight: 600;
-        padding: 1rem 1.5rem;
-        transform: translateX(-50%);
         transition: 350ms ease-out;
 }
 
 
-.switch2:hover {
-        padding: 1rem 1.6rem;
-        transform: translateX(0%);
-}
+.switcher:hover > .option1,
+.switcher:focus > .option1,
+.switcher :active > .option1{
+        transform: translateX(100%);
 
-.switch1:hover {
-        transform: translateX(-50%);
+}
+.switcher:hover > .option2,
+.switcher:focus > .option2,
+.switcher :active > .option2{
+        transform: translateX(-100%);
+
+
+}
+.switcher2:hover > .option1,
+.switcher2:focus > .option1,
+.switcher2 :active > .option1{
+        transform: translateX(100%);
+
+}
+.switcher2:hover > .option2,
+.switcher2:focus > .option2,
+.switcher2 :active > .option2{
+        transform: translateX(-100%);
+
+
 }
 
 .scrolledSwitch {
