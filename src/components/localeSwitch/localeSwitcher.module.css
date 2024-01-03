@@ -69,27 +69,21 @@
 .switcher:focus > .option1,
 .switcher :active > .option1{
         transform: translateX(100%);
-
 }
 .switcher:hover > .option2,
 .switcher:focus > .option2,
 .switcher :active > .option2{
         transform: translateX(-100%);
-
-
 }
 .switcher2:hover > .option1,
 .switcher2:focus > .option1,
 .switcher2 :active > .option1{
         transform: translateX(100%);
-
 }
 .switcher2:hover > .option2,
 .switcher2:focus > .option2,
 .switcher2 :active > .option2{
         transform: translateX(-100%);
-
-
 }
 
 .scrolledSwitch {
@@ -99,4 +93,42 @@
 .disabledLink {
         color: transparent;
         background-color: transparent;
+}
+@media (max-width: 800px) {
+ .option1,
+ .option2{
+        color: rgb(var(--brasil-blue-rgb));
+ }
+ .option1{
+        border: dotted 1px rgba(var(--brasil-blue-rgb), 0.4);
+ }
+ .switcher,
+ .switcher2 {
+         position: relative;
+         display: flex;
+         align-items: center;
+         overflow: auto;
+         width: 100%;
+ }
+ .switcher:hover > .option1,
+ .switcher:focus > .option1,
+ .switcher :active > .option1{
+         transform: translateX(0);
+ }
+ .switcher:hover > .option2,
+ .switcher:focus > .option2,
+ .switcher :active > .option2{
+         transform: translateX(0);
+ }
+ .switcher2:hover > .option1,
+ .switcher2:focus > .option1,
+ .switcher2 :active > .option1{
+         transform: translateX(0);
+ }
+ .switcher2:hover > .option2,
+ .switcher2:focus > .option2,
+ .switcher2 :active > .option2{
+         transform: translateX(0);
+ }  
+
 }

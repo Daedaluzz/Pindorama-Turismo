@@ -20,16 +20,24 @@
 
 .logolarge:hover,
 .logoSmall:hover {
-    filter: hue-rotate(380deg);
-    transition: filter 10s ease-in-out;
+    filter: brightness(120%);
+    transition: 350ms ease-out;
 }
 
 .logoSmall {
     display: none;
+}
 
-
+.logoWhite {
+    filter: brightness(0) invert(1);
 
 }
+
+.logoWhite:hover {
+    filter: none;
+    transition: 350ms ease-out;
+}
+
 @media (max-width: 970px) {
     .logoPai {
         width: clamp(5rem, 8vw, 15rem);
@@ -41,6 +49,25 @@
 
     .logoSmall {
         display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    .logoPai {
+        width: clamp(15rem, 40vw, 25rem);
+        margin-bottom: 4rem;
+    }
+
+    .logolarge {
+        display: flex;
+    }
+
+    .logoSmall {
+        display: none;
+    }
+
+    .logoWhite {
+        filter: none;
     }
 }
 

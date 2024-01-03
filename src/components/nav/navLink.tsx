@@ -4,30 +4,20 @@ import { useSelectedLayoutSegment, } from 'next/navigation';
 import { Link, AppPathnames } from '@/navigation';
 import styles from './nav.module.css';
 
+type Props = {
+    scrolling: boolean;
+    lastScrollPosition: number;
+}
 export default function NavLink<Pathname extends AppPathnames>({
     href,
+    scrolling,
+    lastScrollPosition,
     ...rest
-}: ComponentProps<typeof Link<Pathname>>) {
+}:ComponentProps<typeof Link<Pathname>> & Props) {
     const selectedLayoutSegment = useSelectedLayoutSegment();
     const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/';
     const isActive = pathname === href;
-    const [scrolling2, setScrolling2] = useState<boolean>(false);
-    const [lastScrollPosition, setLastScrollPosition] = useState<number>(0);
 
-    const handleScroll = () => {
-        const currentScrollPosition: number = window.scrollY;
-        setScrolling2(
-            lastScrollPosition > currentScrollPosition && currentScrollPosition !== 0
-        );
-        setLastScrollPosition(currentScrollPosition);
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [lastScrollPosition]);
 
     return (
         <Link
@@ -35,11 +25,11 @@ export default function NavLink<Pathname extends AppPathnames>({
             className={`
     ${styles.link}
     ${ isActive
-      ? scrolling2
+      ? scrolling
         ? styles.scrolledActive
         : styles.active
       : ''}
-    ${scrolling2 ? styles.scrolledLink : ''}
+    ${scrolling ? styles.scrolledLink : ''}
   `}
             href={href}
             {...rest}

@@ -21,18 +21,20 @@
     height: 100%;
     width: 100%;
     transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1), background .2s;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,0.5) -10%, rgba(255,255,255,0) 100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) -10%, rgba(255, 255, 255, 0) 100%);
     backdrop-filter: blur(1px);
 }
+
 .scrolled {
     backdrop-filter: blur(0px);
     box-shadow: 0 0 0.3rem #0000000a;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0) 0%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%);
     background-color: rgb(var(--brasil-white-rgb));
-    
+
 }
 
+/*links standart styles(pageload)*/
 .link {
     position: relative;
     display: flex;
@@ -41,8 +43,7 @@
     font-size: clamp(1.4rem, 1vw, 1.6rem);
     font-weight: 500;
     color: white;
-    transition: 350ms ease-out;
-    -webkit-font-smoothing: antialiased;    
+    -webkit-font-smoothing: antialiased;
 
 }
 
@@ -128,9 +129,49 @@
 
 @media (max-width: 800px) {
     .nav {
-        position: fixed;
         inset: 0 0 0 0;
-        background-color: red;
+        padding: 5rem;
+        background-color: white;
+
     }
+
+    .menu {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        backdrop-filter: blur(0px);
+        gap: 2rem;
+        padding-top: 4rem;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%);
+        background-color: white;
+        border: dotted 1px rgba(var(--brasil-blue-rgb), 0.4);
+    }
+
+    .link {
+        font-size: clamp(1.4rem, 3vw, 4rem);
+        color: rgba(var(--brasil-blue-rgb), 0.5);
+        justify-content: flex-start;
+    }
+
+    .link::after,
+    .link::before,
+    .link:hover::after,
+    .menu li:nth-child(n+2) .link::after {
+        background-color: transparent;
+    }
+    .menu li:nth-child(2) {
+        border-top: dotted 1px rgba(var(--brasil-blue-rgb), 0.4);
+    }
+
+    .link:hover {
+        color: rgba(var(--brasil-blue-rgb), 1);
+    }
+
+    .active {
+        font-weight: 500;
+        color: rgb(var(--brasil-blue-rgb));
+    }
+
+  
 
 }

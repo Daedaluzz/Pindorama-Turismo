@@ -5,19 +5,20 @@ import styles from './localeSwitcher.module.css'
 import React from 'react';
 
 type Props = {
-  langs: any;
-  lang: string
+  lang: string;
+  scrolling: boolean;
+  lastScrollPosition: number;
 };
 export default function LocaleSwitcherSelect({
-  langs,
   lang,
+  scrolling,
+  lastScrollPosition,
 
 }: Props) {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const pathname = usePathname();
-  const [scrolling, setScrolling] = useState<boolean>(false);
-  const [lastScrollPosition, setLastScrollPosition] = useState<number>(0);
+
 
 
   const handleLinkClick = (nextLocale: string) => {
@@ -25,20 +26,6 @@ export default function LocaleSwitcherSelect({
       router.replace(pathname, { locale: nextLocale });
     });
   };
-  const handleScroll = () => {
-    const currentScrollPosition: number = window.scrollY;
-    setScrolling(
-      lastScrollPosition > currentScrollPosition && currentScrollPosition !== 0
-    );
-    setLastScrollPosition(currentScrollPosition);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollPosition]);
 
   return (
     <div className={`${scrolling?styles.switcher2:styles.switcher}`}>
