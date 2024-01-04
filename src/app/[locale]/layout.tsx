@@ -12,7 +12,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: 'Pindorama',
   description: 'Pindorama Turismo',
-  
+  icons: '../favicon.ico',
 }
 
 export default function LocaleLayout({ children, params: { locale } }: {
@@ -21,9 +21,6 @@ export default function LocaleLayout({ children, params: { locale } }: {
 }) {
   return (
     <html lang={locale}>
-       <Head>
-       <link rel="icon" href='../favicon.ico' sizes="any" />
-        </Head>
       <body className={outfit.className}>
         <Nav />
         <MainElement>
