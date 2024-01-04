@@ -5,6 +5,7 @@ import NavLink from "./navLink";
 import styles from './nav.module.css';
 import LogoNav from '../logoNav/logoNav';
 import { AnimatePresence, motion } from 'framer-motion';
+import {pathnames } from '@/navigation';
 
 
 type Props = {
@@ -24,6 +25,8 @@ export default function MenuNav({
   about,
   management
 }: Props) {
+
+  const path = Object.keys(pathnames);
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [scrolling2, setScrolling2] = useState<boolean>(false);
   const [lastScrollPosition, setLastScrollPosition] = useState<number>(0);
@@ -71,7 +74,7 @@ export default function MenuNav({
       setLastScrollPosition(currentScrollPosition);
     }
   };
-
+  console.log(path)
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
